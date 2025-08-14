@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "b0938128-cf14-4e25-9743-0150c41e64e1",
-		"name": "BookNest Microservice",
+		"name": "BookSync Microservice",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25460608",
 		"_collection_link": "https://gold-station-8000.postman.co/workspace/Inlife~02367842-fe4e-45c9-a9e2-468a3a5fa2ea/collection/25460608-b0938128-cf14-4e25-9743-0150c41e64e1?action=share&source=collection_link&creator=25460608"

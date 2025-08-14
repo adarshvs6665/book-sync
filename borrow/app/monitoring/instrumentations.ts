@@ -9,7 +9,7 @@ import { Resource } from "@opentelemetry/resources";
 const sdk = new opentelemetry.NodeSDK({
   resource: new Resource({
     "service.name": "borrow-service",
-    "service.namespace": "mc-booknest",
+    "service.namespace": "mc-book-sync",
   }),
   traceExporter: new OTLPTraceExporter({
     url: "http://otel-collector:4318/v1/traces",

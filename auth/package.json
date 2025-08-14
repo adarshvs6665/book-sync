@@ -1,7 +1,7 @@
 {
-  "name": "booknest-backend",
+  "name": "book-sync-backend",
   "version": "1.0.14",
-  "description": "booknest-backend",
+  "description": "book-sync-backend",
   "author": "",
   "license": "MIT",
   "main": "index.ts",
