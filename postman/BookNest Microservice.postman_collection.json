@@ -1,0 +1,572 @@
+{
+	"info": {
+		"_postman_id": "b0938128-cf14-4e25-9743-0150c41e64e1",
+		"name": "BookNest Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25460608",
+		"_collection_link": "https://gold-station-8000.postman.co/workspace/Inlife~02367842-fe4e-45c9-a9e2-468a3a5fa2ea/collection/25460608-b0938128-cf14-4e25-9743-0150c41e64e1?action=share&source=collection_link&creator=25460608"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "get books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/:bookId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								":bookId"
+							],
+							"variable": [
+								{
+									"key": "bookId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/:bookId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								":bookId"
+							],
+							"variable": [
+								{
+									"key": "bookId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bulk create book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/bulk-create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								"bulk-create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrow",
+			"item": [
+				{
+					"name": "create borrow book request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/borrow/books/:bookId/borrow-request",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"borrow",
+								"books",
+								":bookId",
+								"borrow-request"
+							],
+							"variable": [
+								{
+									"key": "bookId",
+									"value": "f9188c09-c210-427d-883d-d51b721148e9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrow info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/borrow/borrow-info",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"borrow",
+								"borrow-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "issue book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/borrow/:borrowingId/issue-book",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"borrow",
+								":borrowingId",
+								"issue-book"
+							],
+							"variable": [
+								{
+									"key": "borrowingId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/borrow/:borrowingId/return-book",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"borrow",
+								":borrowingId",
+								"return-book"
+							],
+							"variable": [
+								{
+									"key": "borrowingId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrow history",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/borrow/borrow-history",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"borrow",
+								"borrow-history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/borrow/codes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"borrow",
+								"codes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrowed codes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"description\": \"A novel about racial injustice in the Deep South.\",\n    \"logo\": \"https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg\",\n    \"genre\": \"fiction\",\n    \"totalCopies\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/borrow/borrowed-codes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"borrow",
+								"borrowed-codes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"John Doe\",\n    \"userName\": \"john\",\n    \"email\": \"john@gmail.com\",\n    \"password\": \"john@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/sign-up/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"sign-up",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create librarian",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Librarian\",\n    \"userName\": \"librarian2\",\n    \"email\": \"librarian22@gmail.com\",\n    \"password\": \"librarian@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/create-librarian",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"create-librarian"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let resBody = pm.response.json();",
+									"",
+									"if (resBody.data.user.token) {",
+									"    const token = resBody.data.user.token;",
+									"",
+									"    pm.environment.set('token', token);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"librarian\",\n    \"password\": \"librarian@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/sign-in/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"sign-in",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"librarian\",\n    \"password\": \"librarian@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/sign-out/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"sign-out",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

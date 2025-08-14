@@ -1,0 +1,138 @@
+version: "3"
+services:
+  auth:
+    build:
+      dockerfile: Dockerfile
+      context: ./auth
+    container_name: auth
+    ports:
+      - "5000:5000"
+    restart: always
+    volumes:
+      - .:/app
+      - /app/auth/node_modules
+    env_file:
+      - ./auth/.env.development
+    networks:
+      - monitoring
+    depends_on:
+      - jaeger
+  
+  books:
+    build:
+      dockerfile: Dockerfile
+      context: ./books
+    container_name: books
+    ports:
+      - "5001:5001"
+    restart: always
+    volumes:
+      - .:/app
+      - /app/books/node_modules
+    env_file:
+      - ./books/.env.development
+    networks:
+      - monitoring
+  
+  borrow:
+    build:
+      dockerfile: Dockerfile
+      context: ./borrow
+    container_name: borrow
+    ports:
+      - "5002:5002"
+    restart: always
+    volumes:
+      - .:/app/
+      - /app/borrow/node_modules
+    env_file:
+      - ./borrow/.env.development
+    networks:
+      - monitoring
+  
+  nginx-proxy:
+    build:
+      dockerfile: Dockerfile
+      context: ./proxy
+    depends_on:
+      - auth
+      - books
+      - borrow
+    ports:
+      - 8001:8001
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus-data:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+  
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./provisioning:/etc/grafana/provisioning
+    networks:
+      - monitoring
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      - "16686:16686"
+      - "14268"
+      - "14250"
+    networks:
+      - monitoring
+    restart: always
+
+  otel-collector:
+    image: otel/opentelemetry-collector:latest
+    container_name: otel-collector
+    ports:
+      - "1888:1888"   # pprof extension
+      - "8888:8888"   # Prometheus metrics exposed by the collector
+      - "8889:8889"   # Prometheus exporter metrics
+      - "13133:13133" # health_check extension
+      - "4317:4317"   # OTLP gRPC receiver
+      - "55679:55679" # zpages extension
+    volumes:
+      - ./collector-config.yaml:/etc/otelcol/config.yaml
+    command: ["--config=/etc/otelcol/config.yaml"]
+    depends_on:
+      - jaeger
+    networks:
+      - monitoring
+    restart: always
+
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    ports:
+      - "9273:9273"
+    restart: always
+    networks:
+      - monitoring
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    depends_on:
+      - auth
+      - books
+      - borrow
+    command: telegraf --config /etc/telegraf/telegraf.conf
+
+volumes:
+  grafana-data:
+
+networks:
+  monitoring:

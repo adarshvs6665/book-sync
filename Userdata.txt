@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Update the package repository
+sudo yum update -y
+
+# Install Git
+sudo yum install -y git
+
+sudo yum install -y libxcrypt-compat
+
+# Clone the repository
+git clone https://github.com/adarshvs6665/booknest-mc ~/booknest-mc
+
+# Install Docker
+sudo yum install -y docker
+
+# Start Docker service
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Add a Docker group and add the current user to it
+sudo groupadd docker
+sudo usermod -aG docker ec2-user
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Navigate to the cloned repository directory
+cd ~/booknest-mc
+
+# Run Docker Compose to bring up the containers
+sudo docker-compose up -d
+
+# Print Docker versions (run as sudo if the group change hasn't taken effect yet)
+sudo docker --version
+sudo docker-compose --version
+
+# Print completion message
+echo "Setup complete. Docker and Docker Compose installed. Repository cloned and containers started."

@@ -1,0 +1,17 @@
+{
+	"ulid": "01JE115DVB7PMFFVHKVM0CN6BW",
+	"minTime": 1733040000000,
+	"maxTime": 1733047200000,
+	"stats": {
+		"numSamples": 135692,
+		"numSeries": 329,
+		"numChunks": 1057
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01JE115DVB7PMFFVHKVM0CN6BW"
+		]
+	},
+	"version": 1
+}

@@ -1,0 +1,26 @@
+{
+  "name": "booknest-backend",
+  "version": "1.0.14",
+  "description": "booknest-backend",
+  "author": "",
+  "license": "MIT",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development tsx watch --clear-screen=false app/index.ts",
+    "dev:win": "set NODE_ENV=development&& tsx watch --clear-screen=false app/index.ts"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/express-http-proxy": "^1.6.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

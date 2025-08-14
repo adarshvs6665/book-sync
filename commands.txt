@@ -1,0 +1,14 @@
+get prometheus ip
+-----------------
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' prometheus 
+
+
+
+
+open ports 
+----------
+    8001 - proxy
+    3000 - grafana
+    9273 - telegraf
+    9090 - prometheus
+    16686 - jaeger
