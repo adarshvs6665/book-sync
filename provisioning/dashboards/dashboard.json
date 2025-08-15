@@ -18,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 3,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fe5izqoyxzy0wb"
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Total 200, 400 and 500 requests",
       "fieldConfig": {
@@ -71,7 +71,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -97,11 +97,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.3.1",
+      "pluginVersion": "12.2.0-16979757807",
       "targets": [
         {
           "editorMode": "code",
@@ -143,7 +144,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fe5izqoyxzy0wb"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -189,7 +190,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -215,11 +216,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.3.1",
+      "pluginVersion": "12.2.0-16979757807",
       "targets": [
         {
           "editorMode": "code",
@@ -235,7 +237,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fe5izqoyxzy0wb"
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Total number of logged in users",
       "fieldConfig": {
@@ -249,7 +251,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -284,7 +286,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.3.1",
+      "pluginVersion": "12.2.0-16979757807",
       "targets": [
         {
           "editorMode": "code",
@@ -300,7 +302,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fe5izqoyxzy0wb"
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Lists the count of requests from all endpoints in all services",
       "fieldConfig": {
@@ -347,7 +349,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -373,11 +375,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.3.1",
+      "pluginVersion": "12.2.0-16979757807",
       "targets": [
         {
           "datasource": {
@@ -397,7 +400,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fe5izqoyxzy0wb"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -443,7 +446,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -469,11 +472,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.3.1",
+      "pluginVersion": "12.2.0-16979757807",
       "targets": [
         {
           "editorMode": "code",
@@ -489,7 +493,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fe5izqoyxzy0wb"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -535,7 +539,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -561,11 +565,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.3.1",
+      "pluginVersion": "12.2.0-16979757807",
       "targets": [
         {
           "editorMode": "code",
@@ -581,7 +586,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fe5izqoyxzy0wb"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -627,7 +632,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -653,11 +658,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.3.1",
+      "pluginVersion": "12.2.0-16979757807",
       "targets": [
         {
           "editorMode": "code",
@@ -672,7 +678,7 @@
     }
   ],
   "preload": false,
-  "schemaVersion": 40,
+  "schemaVersion": 41,
   "tags": [],
   "templating": {
     "list": []
@@ -685,6 +691,5 @@
   "timezone": "browser",
   "title": "BookSync Backend Monitoring Dashboard",
   "uid": "de5j2fsqxophcd",
-  "version": 23,
-  "weekStart": ""
+  "version": 1
 }
