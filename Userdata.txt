@@ -29,6 +29,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Navigate to the cloned repository directory
 cd ~/book-sync
 
+# Allow permission for prometheus-data
+sudo chmod -R 777 ./prometheus-data/
+
 # Run Docker Compose to bring up the containers
 sudo docker-compose up -d
 
