@@ -14,3 +14,7 @@ scrape_configs:
   - job_name: "telegraf"
     static_configs:
       - targets: ["telegraf:9273"]
+
+remote_write:
+  - url: "http://influxdb:8086/api/v1/prom/write?bucket=monitoring-bucket&org=book-sync-org"
+    bearer_token: "admin123"

@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 4,
+  "id": 5,
   "links": [],
   "panels": [
     {
@@ -416,5 +416,5 @@
   "timezone": "browser",
   "title": "BookSync Backend Monitoring Jaeger Traces Dashboard",
   "uid": "81ce6630-450d-450c-b116-d88635819781",
-  "version": 9
+  "version": 1
 }

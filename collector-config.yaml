@@ -10,6 +10,12 @@ exporters:
     endpoint: jaeger:4317
     tls:
       insecure: true
+  
+  influxdb:
+    endpoint: "http://influxdb:8086"
+    token: "admin123"
+    org: "book-sync-org"
+    bucket: "monitoring-bucket"
 
 service:
   pipelines:
